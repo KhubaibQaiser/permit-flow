@@ -3,10 +3,12 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import '../../styles/globals.css';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Typography } from '@mui/material';
+import { trpc } from '@api/trpc/config';
 
-export default function Home() {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -15,9 +17,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Typography variant="h2">Next+TS+MUI+PRETTIER+ESLINT</Typography>
-      </main>
+      <Component {...pageProps} />
     </>
   );
-}
+};
+
+export default trpc.withTRPC(App);
