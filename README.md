@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Permit-Flow](https://permit-flow.vercel.app/) take home assignment, bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Walkthrough of the project
+
+Visit the following link to get a walkthrough of the project: [Permit-Flow-Loom](https://www.loom.com/share/460d87cc26134e188a4ea19b7b912234)
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -12,23 +24,53 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- NextJS
+- TypeScript
+- MUI
+- tRPC
+- zod
+- ESLINT+PRETTIER
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  #### Improvements
 
-## Learn More
+  - Can integrate Primsa+SQLite for the DB.
+  - Can integrate a form handling library like react-hook-form or formik.
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Hierarchy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    .
+    ├── public
+    ├── src
+    │   ├── app
+    │   │   ├── components                                        # Shared Components
+    │   │   │   ├── core
+    │   │   │   │   └── form
+    │   │   │   └── Page
+    │   │   ├── containers                                        # Page Containers
+    │   │   │   ├── Permit
+    │   │   │   │   └── Requirements
+    │   │   │   │       ├── components
+    │   │   │   │       │   ├── PermitRequirementForm
+    │   │   │   │       │   ├── PermitRequirementPage
+    │   │   │   │       │   └── PermitProcess
+    │   │   │   │       ├── PermitRequirements.tsx
+    │   │   │   │       ├── usePermitRequirementsState.ts         # Custom Hooks for each component to handle business logic
+    │   │   │   │       └── ...
+    │   │   └── styles                                            # Global styles
+    │   ├── pages
+    │   │   ├── api
+    │   │   │   └── trpc                                          # tRPC config for NextJS
+    │   └── server                                                # BE
+    │   │   ├── routers                                           # Routers from all modules
+    │   │   │   ├── permit                                        # Permit module specific routers
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── db.ts                                     # Dummy db
+    │   │   │   │   ├── permit.route.ts                           # All Permit Routes/Endpoints
+    │   │   │   │   ├── types.ts                                  # Permit typings
+    │   │   │   │   └── utils.ts                                  # Utility functions for Permit module
+    │   │   │   └── _app.ts                                       # Merge all routers from all modules into one AppRouter
+    │   │   ├── context.ts
+    │   │   └── trpc.ts                                           # tRPC setup
+    └── ...
