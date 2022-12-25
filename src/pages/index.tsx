@@ -1,1 +1,1 @@
-export { PermitsList as default } from '@client/app/Permits';
+export { default } from '@app/containers/Permit/Requirements';
