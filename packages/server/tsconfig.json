@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@server/*": ["./src/*"],
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
