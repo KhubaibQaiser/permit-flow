@@ -1,0 +1,27 @@
+{
+  "name": "@permit-flow/server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --write src/**/*.{ts,tsx} **/*.{ts,tsx}",
+    "lint": "eslint --fix src/**/*.{ts,tsx} **/*.{ts,tsx}",
+    "lint:fix": "eslint --fix src/**/*.{ts,tsx} **/*.{ts,tsx} --fix",
+    "checkTs": "tsc --noEmit",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@trpc/server": "^10.8.1",
+    "@types/node": "18.11.15",
+    "eslint": "8.29.0",
+    "typescript": "4.9.4",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1"
+  }
+}
